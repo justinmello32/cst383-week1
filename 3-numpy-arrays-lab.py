@@ -12,14 +12,16 @@ import numpy as np
 # here is a list of the mileage (given in MPG) of students
 # in my last class: 21.1, 26.6, 16.3, 33.7, 31.2, 52.0, 27.1
 # create a NumPy array names 'mpg' from these values (use the given order)
+mpg = np.array([21.1,26.6,16.3,33.7,31.2,52.0,27.1])
 
 # create a new array x that has the same length as mpg but
 # every value is 25.0  (use the NumPy size property of mpg)
+x = np.full(mpg.size,25.0)
 
 # print the mileage of the third student
-
+print(x[2])
 # print the mileage of the last student
-
+print(x[5])
 # print the mileage of the first to the third students
 
 # print the mileage of every other student, starting with the first
