@@ -7,6 +7,8 @@ Enter your code below each comment
 """
 
 import random
+
+import numpy
 import numpy as np
 
 # here is a list of the mileage (given in MPG) of students
@@ -19,26 +21,27 @@ mpg = np.array([21.1,26.6,16.3,33.7,31.2,52.0,27.1])
 x = np.full(mpg.size,25.0)
 
 # print the mileage of the third student
-print(x[2])
+print(mpg[2])
 # print the mileage of the last student
-print(x[5])
+print(mpg[5])
 # print the mileage of the first to the third students
-
+print(mpg[0:3])
 # print the mileage of every other student, starting with the first
-
+print(mpg[::2])
 # can you print the same mileages, but in reverse order?
-
+print(mpg[::-2])
 # make a copy of mpg, named mpg2
-
+mpg2 = mpg.copy()
 # print the concatenation of mpg and mpg2
-
+print(numpy.concatenate([mpg, mpg2]))
 # print the data type (dtype) of mpg
-
+print(mpg.dtype)
 # add 5.0 to every element of mpg2
-
+print(mpg2 + 5.0)
 # create a NumPy array 'miles' giving the distances each
 # student has to travel to CSUMB.  The values are:
 # 8.1, 5.4, 12.8, 42.1, 15.0, 22.2, 18.5
+miles = np.array(8.1,5.4,12.8,42.1,15.0,22.2,18.5)
 
 # the gallons used by a student in a round trip to CSUMB
 # is the rount-trip distance divided by miles-per-gallon.  Using vectorized
