@@ -41,7 +41,7 @@ print(mpg2 + 5.0)
 # create a NumPy array 'miles' giving the distances each
 # student has to travel to CSUMB.  The values are:
 # 8.1, 5.4, 12.8, 42.1, 15.0, 22.2, 18.5
-miles = np.array(8.1,5.4,12.8,42.1,15.0,22.2,18.5)
+#miles = np.array(8.1,5.4,12.8,42.1,15.0,22.2,18.5)
 
 # the gallons used by a student in a round trip to CSUMB
 # is the rount-trip distance divided by miles-per-gallon.  Using vectorized

@@ -38,20 +38,20 @@ x = z
 #@ 2 
 # assign 'hello' to variable msg
 # (assignment to msg)
-
+msg = 'hello'
 
 #@ 3 
 # check whether variable msg is a string
 # Example: if msg = 5.0, the result should be False
 # assume msg is defined
 # (write an expression)
-
+isinstance(msg,str)
 
 #@ 4 compute the result of squaring x
 # Example: if x is 2.5, the result should be 6.25
 # assume x is defined
 # (write an expression)
-
+x**2
 
 #@ 5 
 # compute the length of the string obtained by appending strings 
@@ -59,13 +59,13 @@ x = z
 # Example: if s1 is 'foo', and s2 is 'bar', the result should be 7
 # assume s1 and s2 are defined
 # (write an expression)
-
+len(s1 + ' ' + s2)
 
 #@ 6 compute the substring consisting of the 2nd-4th characters of string s
 # Example: if s is 'snorkel', the result should be 'nor'.
 # assume s is defined
 # (write an expression)
-
+s[1:4]
 
 #@ 7
 # In one of the first lectures of class, we looked at creating a
@@ -95,13 +95,13 @@ x = z
 # the listing above as the source of the data.
 # Example: width[8] should give 3.3 
 # (assignment to width)
-
+width = np.array([3.1,3.0,3.0,3.1,3.2,3.2,3.4,3.4,3.3])
 
 #@ 8
 # Repeat the previous problem, but create a NumPy array 'length'
 # that contains the length values in the data.
 # (assignment to length)
-
+length = np.array([5.2,5.3,5.2,4.8,4.9,4.8,5.6,5.5,5.4])
 
 #@ 9
 # Compute a numpy array containing the square root of every element 
@@ -111,34 +111,34 @@ x = z
 # about 2.32
 # assume 'length' is defined
 # (write an expression)
-
+length **2
 
 #@ 10
 # write an expression to compute the average value in the array 'width'
 # You can assume 'width' is non-empty and numeric.
 # assume 'width' is defined
 # (write an expression)
-
+np.mean(width)
 
 #@ 11
 # write an expression to check that arrays 'width' and 'length' have
 # the same number of elements
 # assume 'width' and 'length' are defined
 # (write an expression)
-
+np.array_equal(width.shape, length.shape)
 
 #@ 12
 # write an expression to compute the maximum value in array 'length'
 # assume length is defined
 # (write an expression)
-
+np.amax(length)
 
 #@ 13
 # create a NumPy array 'part_num' containing the part numbers in
 # the data set shown above, from top to bottom.  
 # Example: part_num[3] should be 'part2'. 
 # (assignment to part_num)
-
+part_num = np.array(['part1','part1','part1','part2','part2','part2','part3','part3','part3'])
 
 #@ 14
 # create a Boolean array 'mask' that, for each element in array 'width',
@@ -146,7 +146,7 @@ x = z
 # Example: mask[8] should be True
 # assume array 'width' is defined
 # (assignment to mask)
-
+mask = np.array([False,False,False,False,True,True,True,True,True])
  
 #@ 15
 # using the variable 'mask' just defined, compute an array
@@ -262,7 +262,7 @@ x = z
 # an array of 9 values, the last being about 0.67
 # 
 # (define function distance)
-def distance(width, length, parts):
+# def distance(width, length, parts):
     # your code here
 
         
@@ -280,5 +280,5 @@ def distance(width, length, parts):
 # most_similar_part(3.2, 5.3, parts) should return the list ['part1', 'part3']
 #
 # (define function most_similar_part)
-def most_similar_part(width, length, parts):
+# def most_similar_part(width, length, parts):
     # your code here
