@@ -14,33 +14,34 @@ import pandas as pd
 df = pd.read_csv("https://raw.githubusercontent.com/grbruns/cst383/master/sample-grades.csv").values
 
 # print the score for the first student (row 0) and the third problem (column 2)
-
+print(df[0,2])
 # print all scores for student 15 (meaning row 15)
-
+print(df[:15])
 # print all scores for problems 0-3
-
+print(df[0:3])
 # print all scores for problems 1, 5, 7
 
 # assign the number of students to variable 'num_students'
-
+num_students = 33
 # run the following command to get random data representing scores
 # on two additional extra credit problems
 ec = np.random.choice(np.array([0,1,2,3], dtype='int64'), size=num_students*2).reshape(num_students, 2)
 
 # print the shape of ec
+print(ec.shape)
 
 # update df so that the two rightmost columns are the data in array ec
-
+np.vstack(df,ec)
 # print the mean value of all the scores
-
+print(ec.mean)
 # print the number of scores > 2  (np.sum applied to a boolean mask will
 # give the number of True values in the mask))
-
+print(x > 2)
 # using a list comprehension, compute the total score for each student
 # and assign the result to variable 'totals' as a NumPy array
 
 # print the dtype of totals; it should be int64
-
+print(totals.dtype)
 # assign the number of columns to variable 'num_problems'
 
 # using a list comprehension, compute the average score for each
