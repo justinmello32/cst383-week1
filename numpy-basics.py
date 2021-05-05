@@ -146,14 +146,14 @@ part_num = np.array(['part1','part1','part1','part2','part2','part2','part3','pa
 # Example: mask[8] should be True
 # assume array 'width' is defined
 # (assignment to mask)
-mask = np.array([False,False,False,False,True,True,True,True,True])
+mask = width > 3.15
  
 #@ 15
 # using the variable 'mask' just defined, compute an array
 # of the part numbers of the parts for which the value of mask is True
 # assume array 'mask' and array 'part_num' are defined
 # (write an expression)
-
+part_num[mask == True]
 
 #@ 16
 # using 'mask' again, compute the fraction of values in mask
@@ -164,7 +164,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # are greater than 3.15 
 # assume array 'mask' is defined
 # (write an expression)
-
+mask.mean()
 
 #@ 17
 # write an expression that gives the values in array 'width'
@@ -175,7 +175,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # your result should be 3.1, 3.2, 3.2
 # assume 'width' and 'length' are defined
 # (write an expression)
-
+width[length < 5]
 
 #@ 18
 # compute the mean-zeroed version of width by subtracting
@@ -185,7 +185,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # should have 9 elements and the first should be about -0.0889
 # assume array 'width' is defined
 # (write an expression)
-
+width - np.mean(width)
 
 #@ 19
 # compute a '0-1 scaled' version of array 'length' by subtracting
@@ -198,7 +198,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # Do not use a loop, and do not modify 'length'.
 # assume array length is defined
 # (write an expression)
-
+(length - min(length) / max(length) - min(length))
 
 #@ 20
 # create a 1D NumPy array 'parts' that contains the 'width'
@@ -207,7 +207,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # and the last values should be 5.6, 5.5, 5.4.
 # assume arrays length and width are defined
 # (assignment to parts)
-
+parts = np.array([width] + [length])
 
 #@ 21
 # reshape the parts array so that it is a 2D NumPy array, with
@@ -218,7 +218,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # Example: parts[2,1] = 5.2
 # assume array parts is defined
 # (assignment to parts)
-
+parts = parts.reshape(9,2, order='F')
 
 #@ 22
 # write an expression to get the all rows of parts after
@@ -226,7 +226,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # Example: the first row of your output should be [3., 5.2]
 # assume array parts is defined
 # (write an expression)
-
+parts[2:]
 
 # Next we are going to think about how we could measure the
 # similarity between parts.  One way to do it is to think
@@ -248,7 +248,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # work correctly if array 'parts' contains different values.
 # assume array 'parts' is defined
 # (write an expression)
-
+np.sqrt(((parts[0:1, :] - parts[1:2, :])**2).sum())
 
 #@ 24
 # Suppose we find a part and measure it. We find the width is 3.15 and
@@ -262,7 +262,7 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # an array of 9 values, the last being about 0.67
 # 
 # (define function distance)
-# def distance(width, length, parts):
+def distance(width, length, parts):
     # your code here
 
         
@@ -280,5 +280,5 @@ mask = np.array([False,False,False,False,True,True,True,True,True])
 # most_similar_part(3.2, 5.3, parts) should return the list ['part1', 'part3']
 #
 # (define function most_similar_part)
-# def most_similar_part(width, length, parts):
+def most_similar_part(width, length, parts):
     # your code here
