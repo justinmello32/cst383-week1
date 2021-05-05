@@ -48,7 +48,7 @@ print(totals.dtype)
 # problem and assign the result to variable 'prob_means' as a NumPy array
 
 # what is the lowest of the average score values?
-
+print(np.amin(values))
 # Is it legal to subtract an array with shape (35,) from an
 # array with shape (50,35)?  If so, what will happen?  Write
 # your answer as a comment.

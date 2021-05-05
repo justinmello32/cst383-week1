@@ -18,22 +18,24 @@ student_mileage = [21.1, 26.6, 16.3, 33.7, 31.2, 52.0, 27.1]
 
 # create a Pandas dataframe df containing the MPG values, using the
 # names for the index.  Use 'mpg' for the mileage column.
-
+df = pd.DataFrame([student_mileage],[students])
 # print the dataframe you just created
-
+print(df)
 # using df, print the mileage for Ana's car using the .loc attribute
-
+print(df.loc['Ana'])
 # using df, print the rows of the dataframe where mpg > 30 (use a boolean mask)
-
+print(df > 30)
+mask = [df == True]
 # using df, print the mileage values for Laura and Austin using .loc
-
+print(df.loc['Laura'])
+print(df.loc['Austin'])
 # here are distances the students travel to get to CSUMB
 student_dist = {'Sean':8.1, 'Laura':5.4, 'Angel':12.8, 'Austin':15.0, 'Jose':22.2, 'Ana':18.5}
 
 # create another dataframe df2 containing the distance values, and
 # again use the names for the index.  Use 'distance' for the
 # distance column.
-
+df2 = pd.DataFrame([student_dist],[students])
 # print the dataframe you get by adding 'distance' as a new column.  
 # All students should appear (Mariana will have NaN for distance).
 # Use pandas.join
